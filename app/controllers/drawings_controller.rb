@@ -1,4 +1,8 @@
 class DrawingsController < ApplicationController
+    get '/drawings' do
+        redirect '/'
+    end
+    
     get '/drawings/new' do
         erb :'drawings/new'
     end

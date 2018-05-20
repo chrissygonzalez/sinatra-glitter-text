@@ -1,1 +1,12 @@
 <h1>Welcome to Glitter Text</h1>
+<% if !Helpers.logged_in?(session) %>
+    <a href="/signup">Create an account</a>
+    <a href="/login">Log In</a>
+<% else %>
+    <a href="/logout">Log out</a>
+<% end %>
+<ul>
+    <% Drawing.all.each do |drawing| %>
+    <li><a href="/drawings/<%= drawing.id %>"><%= drawing.title %></a></li>
+    <% end %>
+</ul>
