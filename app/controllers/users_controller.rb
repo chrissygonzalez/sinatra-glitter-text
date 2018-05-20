@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     end
     
     post '/signup' do
-        binding.pry
+        # binding.pry
         if params[:username].empty? || params[:email].empty? || params[:password].empty?
             redirect '/signup'
         end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
         if @user.save
             session[:user_id] = @user.id
-            redirect '/tweets'
+            redirect '/drawings'
         else
             redirect "/failure"
         end
@@ -27,5 +27,13 @@ class UsersController < ApplicationController
         else
             redirect '/signup'
         end
+    end
+    
+    get '/logout' do
+        if Helpers.logged_in?(session)
+            session.clear
+            redirect '/'
+        end
+        redirect '/'
     end
 end
