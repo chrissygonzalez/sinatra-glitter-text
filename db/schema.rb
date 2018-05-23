@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_20_211228) do
+ActiveRecord::Schema.define(version: 2018_05_23_020457) do
 
   create_table "drawings", force: :cascade do |t|
-    t.string "background_color"
-    t.string "background_effect"
-    t.string "text_color"
-    t.string "outline_color"
-    t.string "outline_width"
     t.string "content"
     t.string "title"
     t.integer "user_id"
+    t.integer "theme_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.string "font"
+    t.string "text_color"
+    t.string "text_shadow_color"
+    t.string "background_color"
+    t.string "background_image"
+    t.string "background_animation"
   end
 
   create_table "users", force: :cascade do |t|
