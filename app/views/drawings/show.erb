@@ -1,29 +1,8 @@
-<style>
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Creepster|Pacifico" rel="stylesheet">
-    
-    body {
-        font-family: 'Pacifico', cursive;
-        /*font-family: 'Baloo Chettan', cursive;*/
-        /*font-family: 'Creepster', cursive;*/
-    }
-    .container {
-        /*width: 500px; */
-        /*height: 400px; */
-        background-color: <%= @drawing.background_color %>;
-        background-image: url(/images/<%= @drawing.background_effect %>);
-    }
-    
-    .text {
-        color: <%= @drawing.text_color %>; 
-        text-shadow: -<%= @drawing.outline_width %>px <%= @drawing.outline_width %>px 4px <%= @drawing.outline_color %>; 
-        font-size: 24px;
-    }
-</style>
-
 <h1><%= @drawing.title %></h1>
 
 <div class="container">
     <p class="text">
         <%= @drawing.content %>
+        <%= @drawing.theme %>
     </p>
 </div>

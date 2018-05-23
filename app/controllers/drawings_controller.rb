@@ -8,14 +8,11 @@ class DrawingsController < ApplicationController
     end
     
     post '/drawings' do
+        binding.pry
         @drawing = Drawing.create(
-            background_color: params[:background_color],
-            background_effect: params[:background_effect],
-            text_color: params[:text_color],
-            outline_color: params[:outline_color],
-            outline_width: params[:outline_width],
             content: params[:content],
-            title: params[:title]
+            title: params[:title],
+            theme: Theme.find_by(name: params[:theme])
             )
         redirect "/drawings/#{@drawing.id}"
     end

@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     end
     
     post '/signup' do
-        # binding.pry
         if params[:username].empty? || params[:email].empty? || params[:password].empty?
             redirect '/signup'
         end
@@ -21,7 +20,6 @@ class UsersController < ApplicationController
     end
     
     get '/login' do
-        # binding.pry
         if Helpers.logged_in?(session)
             redirect '/'
         else
