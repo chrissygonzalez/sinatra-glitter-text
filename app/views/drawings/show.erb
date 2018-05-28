@@ -1,8 +1,19 @@
+<style>
+    .theme {
+        background-color: <%= @drawing.theme.background_color %>;
+		background-image: <%= @drawing.theme.background_image %>
+    }
+    .theme-text {
+        color: <%= @drawing.theme.text_color %>;
+    	font-family: <%= @drawing.theme.font %>;
+		text-shadow: -2px 2px 2px <%= @drawing.theme.text_shadow_color %>;
+    }
+</style>
+
 <h1><%= @drawing.title %></h1>
 
 <div class="container">
-    <p class="text">
-        <%= @drawing.content %>
-        <%= @drawing.theme %>
-    </p>
+    <div class="drawing theme">
+        <p class="text theme-text"><%= @drawing.content %></p>
+    </div>
 </div>

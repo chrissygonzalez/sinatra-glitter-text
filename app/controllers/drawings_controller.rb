@@ -8,7 +8,7 @@ class DrawingsController < ApplicationController
     end
     
     post '/drawings' do
-        binding.pry
+        # binding.pry
         @drawing = Drawing.create(
             content: params[:content],
             title: params[:title],

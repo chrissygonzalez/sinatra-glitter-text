@@ -10,14 +10,10 @@
     </div>
     <div>
         <h4>Theme</h4>
-        <input type="radio" name="theme" id="theme_1" value="glitter">
-        <label for="theme_1">Glitter</label>
-        <input type="radio" name="theme" id="theme_2" value="airmail">
-        <label for="theme_2">Airmail</label>
-        <input type="radio" name="theme" id="theme_3" value="witchy">
-        <label for="theme_3">Witchy</label>
-        <input type="radio" name="theme" id="theme_4" value="dank">
-        <label for="theme_4">Dank</label>
+        <% Theme.all.each do |theme| %>
+            <input type="radio" name="theme" id="theme_<%= theme.id %>" value="<%= theme.name %>">
+            <label for="theme_<%= theme.id %>"><%= theme.name %></label>
+        <% end %>
     </div>
     <input type="submit">
 </form>
