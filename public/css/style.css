@@ -1,3 +1,96 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Glitter Text Styles */
+body {
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    color: #ff66ad;
+}
+
+a {
+    text-decoration: none; 
+}
+
+nav {
+    /*background-color: #ccc;*/
+    /*height: 60px;*/
+    padding: 15px;
+    border-bottom: 2px solid #ff66ad;
+}
+
+.button {
+    padding: 8px;
+    font-weight: bold;
+    font-size: .8em;
+    text-transform: uppercase;
+    border-radius: 3px;   
+}
+
+.button-primary {
+    border: 2px solid #ff66ad;
+    background-color: #ff66ad;
+    color: #fff;
+}
+
+.button-secondary {
+    border: 2px solid #ff66ad;
+    background-color: #fff;
+    color: #ff66ad;
+}
+
 .drawing {
 	width: 60%;
 	padding: 5%;
@@ -11,4 +104,18 @@
 	align-self: center;
 	font-size: 16px;
     font-size: 6vw;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
