@@ -1,6 +1,6 @@
 class DrawingsController < ApplicationController
     get '/drawings' do
-        redirect '/'
+        erb :'/drawings/index'
     end
     
     get '/drawings/new' do

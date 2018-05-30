@@ -1,12 +1,10 @@
-<nav class="clearfix">
-    <h1 class="float-left">Glitter Text</h1>
-    <% if !Helpers.logged_in?(session) %>
-    <a href="/signup" class="button button-primary float-right">Create an account</a>
-    <a href="/login" class="button button-secondary float-right">Log In</a>
-    <% else %>
-        <a href="/logout" class="button button-secondary float-right">Log out</a>
-    <% end %>
-</nav>
+      <% if !Helpers.logged_in?(session) %>
+      <a href="/signup" class="button button-primary float-right">Create an account</a>
+      <a href="/login" class="button button-secondary float-right">Log In</a>
+      <% else %>
+          <a href="/logout" class="button button-secondary">Log out</a>
+          <a href="/drawings/new" class="button button-secondary">Create New Drawing</a>
+      <% end %>
 <!--<h1>Welcome to Glitter Text</h1>-->
 <ul>
     <% Drawing.all.each do |drawing| %>

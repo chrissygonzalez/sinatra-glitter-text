@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         if Helpers.logged_in?(session)
             redirect '/'
         else
-            redirect '/login'
+            erb :'/users/login'
         end
     end
     

@@ -1,0 +1,5 @@
+<ul>
+    <% Drawing.all.each do |drawing| %>
+    <li><a href="/drawings/<%= drawing.id %>"><%= drawing.title %></a></li>
+    <% end %>
+</ul>

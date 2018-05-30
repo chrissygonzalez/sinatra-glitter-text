@@ -10,6 +10,17 @@
     }
 </style>
 
+    <nav class="clearfix">
+      <a href="/"><h1 class="float-left">Make Yourself a Glitter Text</h1></a>
+      <% if !Helpers.logged_in?(session) %>
+      <a href="/signup" class="button button-primary float-right">Create an account</a>
+      <a href="/login" class="button button-secondary float-right">Log In</a>
+      <% else %>
+          <a href="/logout" class="button button-secondary float-right">Log out</a>
+          <a href="/drawings/new" class="button button-secondary float-right">Create New Drawing</a>
+      <% end %>
+    </nav>
+
 <h1><%= @drawing.title %></h1>
 
 <div class="container">
