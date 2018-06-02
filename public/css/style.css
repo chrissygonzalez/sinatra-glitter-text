@@ -124,6 +124,8 @@ a {
 }
 /* HOME PAGE */
 .home-h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
     color: #F8A0A3;
     font-size: 36px;
     font-weight: 300;
@@ -175,6 +177,11 @@ input[type='text'], input[type='password']  {
     margin: 0 auto;
 }
 
+.flex-container {
+    display: flex; 
+    justify-content: center;
+}
+
 .float-left {
     float: left;
 }
@@ -187,4 +194,12 @@ input[type='text'], input[type='password']  {
   content: "";
   display: table;
   clear: both;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
 }
