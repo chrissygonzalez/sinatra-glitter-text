@@ -1,4 +1,13 @@
-<h1>Make a new Glitter Text</h1>
+<nav class="clearfix">
+    <h2 class="nav-text float-left"><a href="/">< Back to drawings</a></h2>
+    <div class="float-right">
+        <p class="display-inline-block">Hello, <%= Helpers.current_user(session).username %>!</p>
+        <a href="/drawings/new" class="button display-inline-block">+ New Drawing</a>
+        <a href="/logout" class="button display-inline-block">Log out</a>
+    </div>
+</nav>
+
+<h1 class="text-center">Make a new Glitter Text</h1>
 <form method="post" action="/drawings">
     <div>
         <label for="title">Title</label>
