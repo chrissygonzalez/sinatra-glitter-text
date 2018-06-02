@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     
     get '/login' do
         if Helpers.logged_in?(session)
-            redirect '/'
+            redirect '/drawings'
         else
             erb :'/users/login'
         end

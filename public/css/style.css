@@ -50,20 +50,28 @@ table {
 /* Glitter Text Styles */
 body {
     font-size: 1em;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #5E0C0C;
 }
 
 nav {
-    padding: 15px;
-    border-bottom: 2px solid #ff66ad;
+    padding: 25px;
+    border-bottom: 1px solid rgba(248,158,160,0.42);
+}
+
+.nav-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #5E0C0C;
+    letter-spacing: 0.75px;
 }
 
 h1 {
-    font-family: 'Shrikhand', cursive;
-    font-size: 2.5em;
-    letter-spacing: 1px;
-    color: #ff66ad;
+    font-family: Georgia-Italic;
+    font-size: 24px;
+    color: #5E0C0C;
 }
 
 a, a:hover {
@@ -80,12 +88,24 @@ a {
 
 .button {
     padding: 8px;
-    font-weight: bold;
-    font-size: .8em;
+    font-weight: 600;
+    font-size: 13px;
     text-transform: uppercase;
     background: #FFFFFF;
     border: 2px solid rgba(94,12,12,0.60);
     border-radius: 23px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px 0 rgba(157,155,153,0.43);
+}
+
+.button:active {
+    background: #5E0C0C;
+    color: #fff;
 }
 
 .drawing {
@@ -101,6 +121,58 @@ a {
 	align-self: center;
 	font-size: 16px;
     font-size: 6vw;
+}
+/* HOME PAGE */
+.home-h1 {
+    color: #F8A0A3;
+    font-size: 36px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-background {
+    background-image: linear-gradient(-183deg, #FDD2F2 0%, #F89B9B 100%); 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+}
+
+.home-button-box {
+    background-color: #fff; 
+    width: 350px; 
+    align-self: center; 
+    padding-top: 80px; 
+    padding-bottom: 50px;
+}
+
+/* FORMS */
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    color: #5E0C0C;
+}
+
+input[type='text'], input[type='password']  {
+    background: #FFFFFF;
+    border: 2px solid rgba(248,158,160,0.42);
+    padding: 10px;
+    width: 100%;
+}
+
+
+
+/* LAYOUT */
+.text-center {
+    text-align: center;
+}
+
+.margin-center {
+    display: block;
+    margin: 0 auto;
 }
 
 .float-left {
