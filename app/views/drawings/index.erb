@@ -1,7 +1,13 @@
+<nav class="clearfix">
+    <h2 class="nav-text float-left"><a href="/">Glitter Text</a></h2>
+    <div class="float-right">
+        <p class="display-inline-block">Hello, <%= Helpers.current_user(session).username %>!</p>
+        <a href="/logout" class="button display-inline-block">Log out</a>
+    </div>
+</nav>
+<h1 class="text-center">My Drawings</h1>
 <ul>
     <% Drawing.all.each do |drawing| %>
     <li><a href="/drawings/<%= drawing.id %>"><%= drawing.title %></a></li>
     <% end %>
 </ul>
-
-<a href="/logout">Log out</a>

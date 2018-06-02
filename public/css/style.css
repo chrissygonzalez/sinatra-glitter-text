@@ -168,6 +168,9 @@ input[type='text'], input[type='password']  {
 
 
 /* LAYOUT */
+.display-inline-block {
+    display: inline-block;
+}
 .text-center {
     text-align: center;
 }

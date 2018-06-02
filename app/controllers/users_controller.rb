@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
-    get '/' do
-        if Helpers.logged_in?(session)
-            redirect '/drawings'
-        else
-            erb :index
-        end
-    end
-    
+
     get '/signup' do
         erb :'/users/create_user'
     end
@@ -28,6 +21,7 @@ class UsersController < ApplicationController
     end
     
     get '/login' do
+        # binding.pry
         if Helpers.logged_in?(session)
             redirect '/drawings'
         else
@@ -39,7 +33,7 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect '/'
+            redirect '/drawings'
         else
             redirect '/login'
         end

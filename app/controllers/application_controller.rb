@@ -10,7 +10,11 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
-    erb :index
+    if Helpers.logged_in?(session)
+      redirect '/drawings'      
+    else
+      erb :index
+    end
   end
 
 end
