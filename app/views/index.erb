@@ -1,13 +1,7 @@
-      <% if !Helpers.logged_in?(session) %>
-      <a href="/signup" class="button button-primary float-right">Create an account</a>
-      <a href="/login" class="button button-secondary float-right">Log In</a>
-      <% else %>
-          <a href="/logout" class="button button-secondary">Log out</a>
-          <a href="/drawings/new" class="button button-secondary">Create New Drawing</a>
-      <% end %>
-<!--<h1>Welcome to Glitter Text</h1>-->
-<ul>
-    <% Drawing.all.each do |drawing| %>
-    <li><a href="/drawings/<%= drawing.id %>"><%= drawing.title %></a></li>
-    <% end %>
-</ul>
+<div style="background-image: linear-gradient(-183deg, #FDD2F2 0%, #F89B9B 100%); height: 100vh;">
+    <div style="background-color: #fff;">
+        <h1>Glitter Text</h1>
+      <a href="/signup" class="button">Sign Up</a>
+      <a href="/login" class="button">Log In</a>
+    </div>
+</div>

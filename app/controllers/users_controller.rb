@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+    get '/' do
+        if Helpers.logged_in?(session)
+            redirect '/drawings'
+        else
+            erb :index
+        end
+    end
+    
     get '/signup' do
         erb :'/users/create_user'
     end

@@ -51,6 +51,12 @@ table {
 body {
     font-size: 1em;
     font-family: Arial, sans-serif;
+    color: #5E0C0C;
+}
+
+nav {
+    padding: 15px;
+    border-bottom: 2px solid #ff66ad;
 }
 
 h1 {
@@ -60,15 +66,16 @@ h1 {
     color: #ff66ad;
 }
 
+a, a:hover {
+    color: #5E0C0C;
+}
+
 a {
     text-decoration: none; 
 }
 
-nav {
-    /*background-color: #ccc;*/
-    /*height: 60px;*/
-    padding: 15px;
-    border-bottom: 2px solid #ff66ad;
+.link {
+    text-decoration: underline;
 }
 
 .button {
@@ -76,19 +83,9 @@ nav {
     font-weight: bold;
     font-size: .8em;
     text-transform: uppercase;
-    border-radius: 3px;   
-}
-
-.button-primary {
-    border: 2px solid #ff66ad;
-    background-color: #ff66ad;
-    color: #fff;
-}
-
-.button-secondary {
-    border: 2px solid #ff66ad;
-    background-color: #fff;
-    color: #ff66ad;
+    background: #FFFFFF;
+    border: 2px solid rgba(94,12,12,0.60);
+    border-radius: 23px;
 }
 
 .drawing {
