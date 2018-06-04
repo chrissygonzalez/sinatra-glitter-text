@@ -1,0 +1,38 @@
+<nav class="clearfix">
+    <h2 class="nav-back-text float-left mt-8"><a href="/">&#8656; Back to drawings</a></h2>
+    <div class="float-right">
+        <p class="display-inline-block">Hello, <%= Helpers.current_user(session).username %>!</p>
+        <a href="/logout" class="button display-inline-block">Log out</a>
+    </div>
+</nav>
+
+<div class="flex-container">
+    <div class="home-button-box">
+        <h1 class="text-center">Edit your Glitter Text</h1>
+        <form method="post" action="/drawings/<%= @drawing.id %>">
+            <input id="hidden" type="hidden" name="_method" value="patch">
+            <div class="mt-20">
+                <label for="title">Title</label>
+                <input type="text"name="title" value="<%= @drawing.title %>">
+            </div>
+            <div class="mt-20">
+                <label for="content">Content</label>
+                <input type="text" name="content" value="<%= @drawing.content %>">
+            </div>
+            <div class="mt-20 mb-20">
+                <p class="label">Theme</p>
+                <% Theme.all.each do |theme| %>
+                    <input type="radio" name="theme" id="theme_<%= theme.id %>" value="<%= theme.name %>" 
+                        <% if theme.name == @drawing.theme.name %> 
+                        checked 
+                        <% end %>>
+                    <label for="theme_<%= theme.id %>"><%= theme.name %></label>
+                <% end %>
+            </div>
+            <div class="text-center">
+                <a href="/drawings/<%= @drawing.id %>" class="button">Cancel</a>
+                <input class="button" type="submit">
+            </div>
+        </form>
+    </div>
+</div>

@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     end
     
     get '/login' do
-        # binding.pry
         if Helpers.logged_in?(session)
             redirect '/drawings'
         else
