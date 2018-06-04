@@ -68,6 +68,15 @@ nav {
     letter-spacing: 0.75px;
 }
 
+.nav-back-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #5E0C0C;
+    letter-spacing: 0.75px;
+}
+
 h1 {
     font-family: Georgia-Italic;
     font-size: 24px;
@@ -158,6 +167,14 @@ label {
     color: #5E0C0C;
 }
 
+.label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    color: #5E0C0C;
+}
+
 input[type='text'], input[type='password']  {
     background: #FFFFFF;
     border: 2px solid rgba(248,158,160,0.42);
@@ -197,6 +214,10 @@ input[type='text'], input[type='password']  {
   content: "";
   display: table;
   clear: both;
+}
+
+.mt-8 {
+    margin-top: 8px;    
 }
 
 .mt-20 {
