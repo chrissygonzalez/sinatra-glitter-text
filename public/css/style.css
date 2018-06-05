@@ -220,6 +220,7 @@ input[type='text'], input[type='password']  {
 .flex-container {
     display: flex; 
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .float-left {
