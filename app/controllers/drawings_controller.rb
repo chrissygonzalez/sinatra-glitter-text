@@ -1,5 +1,7 @@
 class DrawingsController < ApplicationController
     get '/drawings' do
+        # binding.pry
+        @drawings = Drawing.where("user_id = ?", Helpers.current_user(session).id)
         erb :'/drawings/index'
     end
     
@@ -11,7 +13,8 @@ class DrawingsController < ApplicationController
         @drawing = Drawing.create(
             content: params[:content],
             title: params[:title],
-            theme: Theme.find_by(name: params[:theme])
+            theme: Theme.find_by(name: params[:theme]),
+            user_id: Helpers.current_user(session).id
             )
         redirect "/drawings/#{@drawing.id}"
     end
@@ -42,5 +45,12 @@ class DrawingsController < ApplicationController
     end
     
     get '/drawings/:id/delete' do
+        @drawing = Drawing.find(params[:id])
+        if Helpers.current_user(session).id == @drawing.user_id
+            @drawing.destroy
+            redirect '/drawings'
+        else
+            redirect "/drawings/#{@drawing.id}"
+        end
     end
 end
