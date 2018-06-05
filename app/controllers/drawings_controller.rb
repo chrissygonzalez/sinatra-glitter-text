@@ -1,6 +1,5 @@
 class DrawingsController < ApplicationController
     get '/drawings' do
-        # binding.pry
         @drawings = Drawing.where("user_id = ?", Helpers.current_user(session).id)
         erb :'/drawings/index'
     end
@@ -21,7 +20,11 @@ class DrawingsController < ApplicationController
     
     get '/drawings/:id' do
         @drawing = Drawing.find(params[:id])
-        erb :'/drawings/show'
+        if Helpers.current_user(session).id == @drawing.user_id
+            erb :'/drawings/show'
+        else
+            redirect '/drawings'
+        end
     end
     
     get '/drawings/:id/edit' do
@@ -29,7 +32,11 @@ class DrawingsController < ApplicationController
             redirect '/login'
         else
             @drawing = Drawing.find(params[:id])
-            erb :'/drawings/edit'
+            if @drawing.id == Helpers.current_user(session).id
+                erb :'/drawings/edit'
+            else
+                redirect '/drawings'
+            end
         end
     end
     
