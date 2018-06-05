@@ -7,16 +7,21 @@
     </div>
 </nav>
 <h1 class="text-center mt-20 mb-20 pt-80">My Drawings</h1>
-<div class="flex-container margin-center" style="width: 80%;">
-    <% @drawings.all.each do |drawing| %>
-    <div class="mt-20">
-        <a href="/drawings/<%= drawing.id %>" style="display: block;" class="text-center"><%= drawing.title %>
-        <div class="drawing-small" style="background-color: <%= drawing.theme.background_color %>; background-image: <%= drawing.theme.background_image %>;">
-            <p class="text-small theme-text" style="color: <%= drawing.theme.text_color %>; font-family: <%= drawing.theme.font %>; text-shadow: -2px 2px 2px <%= drawing.theme.text_shadow_color %>;">
-                <%= drawing.content %>
-            </p>
+<div class="flex-container margin-center width-80-per">
+    <% if !@drawings.empty? %>
+        <% @drawings.all.each do |drawing| %>
+        <div class="mt-20 drawing-small-container">
+            <a href="/drawings/<%= drawing.id %>" class="text-center display-block">
+            <div class="drawing-small" style="background-color: <%= drawing.theme.background_color %>; background-image: <%= drawing.theme.background_image %>;">
+                <p class="text-small theme-text" style="color: <%= drawing.theme.text_color %>; font-family: <%= drawing.theme.font %>; text-shadow: -2px 2px 2px <%= drawing.theme.text_shadow_color %>;">
+                    <%= drawing.content %>
+                </p>
+            </div>
+            <p class="mt-20 mb-20"><%= drawing.title %></p>
+            </a>
         </div>
-        </a>
-    </div>
+        <% end %>
+    <% else %>
+        <p class="muted">No drawings yet! Add one now.</p>
     <% end %>
 </div>

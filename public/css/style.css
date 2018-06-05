@@ -129,10 +129,17 @@ a {
 	width: 200px;
 	height: 100px;
 	overflow: hidden;
-	padding: 5px;
-	margin: 5px 25px 25px 25px;
-	/*display: flex;*/
 	background-size: contain;
+}
+
+.drawing-small-container {
+    border: 1px solid rgba(248,158,160,0.42); 
+    border-radius: 3px; 
+    margin: 25px;
+}
+
+.muted {
+    color: #999;
 }
 
 .text {
@@ -145,8 +152,9 @@ a {
 
 .text-small {
 	margin: 0 auto;
+	padding-top: 20px;
 	text-align: center;
-	align-self: center;
+	/*align-self: center;*/
 	/*font-size: 16px;*/
     font-size: 2em;
 }
@@ -203,11 +211,15 @@ input[type='text'], input[type='password']  {
 }
 
 
-
 /* LAYOUT */
 .display-inline-block {
     display: inline-block;
 }
+
+.display-block {
+    display: block;    
+}
+
 .text-center {
     text-align: center;
 }
@@ -251,4 +263,8 @@ input[type='text'], input[type='password']  {
 
 .pt-80 {
     padding-top: 80px;
+}
+
+.width-80-per {
+    width: 80%;
 }
