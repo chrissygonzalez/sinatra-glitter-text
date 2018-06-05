@@ -7,8 +7,15 @@
     </div>
 </nav>
 <h1 class="text-center">My Drawings</h1>
-<ul>
+<div class="flex-container">
     <% Drawing.all.each do |drawing| %>
-    <li><a href="/drawings/<%= drawing.id %>"><%= drawing.title %></a></li>
+    <div>
+        <a href="/drawings/<%= drawing.id %>" style="display: block;" class="text-center"><%= drawing.title %></a>
+        <div class="drawing-small" style="background-color: <%= drawing.theme.background_color %>; background-image: <%= drawing.theme.background_image %>;">
+            <p class="text-small theme-text" style="color: <%= drawing.theme.text_color %>; font-family: <%= drawing.theme.font %>; text-shadow: -2px 2px 2px <%= drawing.theme.text_shadow_color %>;">
+                <%= drawing.content %>
+            </p>
+        </div>
+    </div>
     <% end %>
-</ul>
+</div>
