@@ -9,7 +9,6 @@ class DrawingsController < ApplicationController
     end
     
     post '/drawings' do
-        
         @drawing = Drawing.create(
             content: params[:content],
             title: params[:title],
@@ -39,7 +38,7 @@ class DrawingsController < ApplicationController
             redirect '/login'
         else
             @drawing = Drawing.find(params[:id])
-            if @drawing.id == Helpers.current_user(session).id
+            if @drawing.user_id == Helpers.current_user(session).id
                 erb :'/drawings/edit'
             else
                 redirect '/drawings'
@@ -49,6 +48,7 @@ class DrawingsController < ApplicationController
     
     patch '/drawings/:id' do 
         if params[:title].empty? || params[:content].empty? || params[:theme].empty?
+            flash[:error] = "Title, content, and/or theme can't be empty."
             redirect "/drawings/#{params[:id]}/edit"
         else
             @drawing = Drawing.find(params[:id])

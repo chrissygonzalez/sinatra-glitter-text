@@ -12,6 +12,7 @@ class UsersController < ApplicationController
             flash[:error] = @errors.join(". ")
             redirect '/signup'
         else
+            # binding.pry
             session[:user_id] = @user.id
             redirect '/drawings'
         end
@@ -28,9 +29,21 @@ class UsersController < ApplicationController
     end
     
     post '/login' do
+        if params[:username].empty? && params[:password].empty?
+            flash[:error] = "Username and password can't be empty."
+            redirect '/login'
+        elsif params[:username].empty?
+            flash[:error] = "Username can't be empty."
+            redirect '/login'
+        elsif params[:password].empty?
+            flash[:error] = "Password can't be empty."
+            redirect '/login'
+        end
+        
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
+            binding.pry
             redirect '/drawings'
         else
             redirect '/login'
