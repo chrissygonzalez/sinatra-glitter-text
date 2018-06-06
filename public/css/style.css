@@ -138,6 +138,20 @@ a {
     margin: 25px;
 }
 
+.flash {
+    padding: 10px;
+    width: 350px;
+    border-radius: 3px;
+    background-color: #0000005c;
+    background-color: #f89b9b;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 15px;
+}
+
 .muted {
     color: #999;
 }

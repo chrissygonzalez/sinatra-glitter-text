@@ -5,16 +5,15 @@ class UsersController < ApplicationController
     end
     
     post '/signup' do
-        if params[:username].empty? || params[:email].empty? || params[:password].empty?
-            redirect '/signup'
-        end
-        @user = User.new(username: params[:username], email: params[:email], password: params[:password])
+        @user = User.create(username: params[:username], email: params[:email], password: params[:password])
 
-        if @user.save
+        if @user.errors.any?
+            @errors = @user.errors.full_messages
+            flash[:error] = @errors.join(". ")
+            redirect '/signup'
+        else
             session[:user_id] = @user.id
             redirect '/drawings'
-        else
-            redirect "/failure"
         end
         
         redirect '/drawings'
