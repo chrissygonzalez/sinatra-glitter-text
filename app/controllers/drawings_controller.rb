@@ -9,13 +9,20 @@ class DrawingsController < ApplicationController
     end
     
     post '/drawings' do
+        
         @drawing = Drawing.create(
             content: params[:content],
             title: params[:title],
             theme: Theme.find_by(name: params[:theme]),
             user_id: Helpers.current_user(session).id
             )
-        redirect "/drawings/#{@drawing.id}"
+        if @drawing.errors.any?
+            @errors = @drawing.errors.full_messages
+            flash[:error] = @errors.join(". ")
+            redirect '/drawings/new'
+        else
+            redirect "/drawings/#{@drawing.id}"
+        end
     end
     
     get '/drawings/:id' do
