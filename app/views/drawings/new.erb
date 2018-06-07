@@ -23,7 +23,7 @@
                 <p class="label">Theme</p>
                 <% Theme.all.each do |theme| %>
                     <input type="radio" name="theme" id="theme_<%= theme.id %>" value="<%= theme.name %>">
-                    <label for="theme_<%= theme.id %>"><%= theme.name %></label>
+                    <label class="mr-15" for="theme_<%= theme.id %>"><%= theme.name %></label>
                 <% end %>
             </div>
             <input class="button margin-center" type="submit">
