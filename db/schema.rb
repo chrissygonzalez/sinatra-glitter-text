@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2018_05_23_020457) do
     t.string "text_shadow_color"
     t.string "background_color"
     t.string "background_image"
-    t.string "background_animation"
   end
 
   create_table "users", force: :cascade do |t|

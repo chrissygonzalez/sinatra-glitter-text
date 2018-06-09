@@ -7,7 +7,6 @@ class CreateThemes < ActiveRecord::Migration[5.2]
       t.string :text_shadow_color
       t.string :background_color
       t.string :background_image
-      t.string :background_animation
     end
   end
 end
