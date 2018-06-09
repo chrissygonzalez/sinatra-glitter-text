@@ -11,8 +11,7 @@ class UsersController < ApplicationController
             @errors = @user.errors.full_messages
             flash[:error] = @errors.join(". ")
             redirect '/signup'
-        else
-            session[:user_id] = @user.id
+        else            session[:user_id] = @user.id
             redirect '/drawings'
         end
         
@@ -42,7 +41,6 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            binding.pry
             redirect '/drawings'
         else
             redirect '/login'
