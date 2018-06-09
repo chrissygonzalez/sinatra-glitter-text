@@ -7,4 +7,4 @@ I've never gotten contributions on anything! But if you're interested in contrib
 * anything else you're thinking
 
 # Code of Conduct
-I'm adopting the Contributor Covenant Code of Conduct for this project.
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
