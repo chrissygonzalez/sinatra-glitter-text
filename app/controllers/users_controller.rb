@@ -12,7 +12,6 @@ class UsersController < ApplicationController
             flash[:error] = @errors.join(". ")
             redirect '/signup'
         else
-            # binding.pry
             session[:user_id] = @user.id
             redirect '/drawings'
         end
